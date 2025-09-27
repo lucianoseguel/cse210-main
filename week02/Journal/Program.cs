@@ -28,7 +28,7 @@ class Program
             Console.WriteLine($"You selected option {choice}");
 
 
-            if (choice == "1")
+            if (choice == "1") //Write a new entry
             {
 
                 Writefile(journalEntries);
@@ -36,21 +36,23 @@ class Program
 
 
             }
-            else if (choice == "2")
+            else if (choice == "2") //Display the journal
             {
 
                 Display(journalEntries);
             }
-            else if (choice == "3")
+            else if (choice == "3") //Load the journal from a file
             {
                 Load(LoadedEntries);
                 Display(journalEntries);
                 Display(LoadedEntries);
 
             }
-            else if (choice == "4")
+            else if (choice == "4") //Save the journal to a file
             {
-                Savefile(journalEntries,LoadedEntries);
+                Console.Write("Please input the filename: ");
+                string filename = Console.ReadLine();
+                Savefile(journalEntries,LoadedEntries,filename);
             }
 
 
@@ -74,11 +76,41 @@ class Program
 
     public static void Writefile(List<string> journalEntries)
 
-    {
-        Console.Write("What do you want to write? ");
+    {   Random rnd = new Random();
+        int question = rnd.Next(6);
+        if (question == 0)
+        { Console.WriteLine("Who was the most interesting person I interacted with today?"); }
+        else if (question == 1)
+        {
+            Console.WriteLine("What was the best part of my day?");
+        }
+        else if (question == 2)
+        {
+            Console.WriteLine("How did I see the hand of the Lord in my life today?");
+        }
+
+        else if (question == 3)
+        {
+            Console.WriteLine("What was the strongest emotion I felt today?");
+        }
+
+        else if (question == 4)
+        {
+            Console.WriteLine("If I had one thing I could do over today, what would it be?");
+        }
+
+        else if (question == 5)
+        {
+            Console.WriteLine("Who was the most interesting person I interacted with today?");
+        }
+
+
+
+        Console.Write("Wirte your answer: ");
         string entry = Console.ReadLine();
         string to_write = $"[{DateTime.Now}] : {entry}";
         journalEntries.Add(to_write);
+        
         Console.WriteLine("Note saved: " + to_write);
     }
 
@@ -93,9 +125,9 @@ class Program
 
     public static List<string> Load(List<string> Loadentrities)
     {
-        //Console.Write("What is the name of the file?");
-        //string filename = Console.ReadLine();
-        string filename = "journal.csv";
+        Console.Write("What is the name of the file?");
+        string  filename = Console.ReadLine();
+        //string filename = "journal.csv";
 
         string[] lines = System.IO.File.ReadAllLines(filename);
 
@@ -114,9 +146,9 @@ class Program
         return Loadentrities;
     }
 
-    public static void Savefile(List<string> journalEntries, List<string> LoadedEntries)
+    public static void Savefile(List<string> journalEntries, List<string> LoadedEntries, string filename)
     {
-        string filename = "journal.csv";
+        
         
         using (StreamWriter outputFile = new StreamWriter(filename))
         {

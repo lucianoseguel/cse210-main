@@ -27,7 +27,7 @@ class Program
                      inputnumber = Console.ReadLine();
                     stringnumber = int.Parse(inputnumber);
                 }
-                else{
+                else if (stringnumber == magicnumber){
 
                     Console.WriteLine("You discovered the magic number");
                     break;
