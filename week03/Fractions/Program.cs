@@ -8,7 +8,22 @@ class Program
         Console.WriteLine("Hello World! This is the Fractions Project.");
 
         Console.Write("Please set your numerator: ");
+        string text_numerator = Console.ReadLine();
+        int numerator = int.Parse(text_numerator);
+
+
+
+        Console.Write("Please set your denominator: ");
+        string text_denominator = Console.ReadLine();
+        int denominator = int.Parse(text_denominator);
+
+        Fraction fraction = new Fraction();
+        Console.WriteLine(fraction.GetFraction());
+        Console.WriteLine(fraction.GetDecimal(numerator, denominator));
+        Console.WriteLine(fraction.GetWhole(numerator));
+     
         
+
        
 
     }
@@ -24,9 +39,9 @@ class Program
             _denominator = 1;
         }
 
-        public string GetFraction(int numerator, int denominator)
+        public string GetFraction()
         {
-            return $"{numerator}/{denominator}";
+            return $"{_numerator}/{_denominator}";
 
         }
 
