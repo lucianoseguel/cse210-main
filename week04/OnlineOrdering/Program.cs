@@ -75,7 +75,7 @@ class Program
 
         //------------------------MAKING ORDERS--------------------------
         Order order_1 = new Order();
-        order_1.client = client_1; //Set client and products
+        order_1.client = client_3; //Set client and products
         order_1.Addproduct(product4, 4);
         order_1.Addproduct(product1, 10);
         order_1.Addproduct(product3, 1);
@@ -89,7 +89,7 @@ class Program
 
 
         Order order_3 = new Order();
-        order_3.client = client_1; //Set client and products
+        order_3.client = client_2; //Set client and products
         order_3.Addproduct(product4, 8);
         order_3.Addproduct(product1, 20);
         order_3.Addproduct(product3, 3);
