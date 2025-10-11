@@ -73,14 +73,18 @@ class Program
             comentary.SetComment(user, text);
             Comments.Add(comentary);
         }
-        
+
         public void GetVideo()
         {
             Console.WriteLine($" Title: {_video_name} \n Duration: {_duration} \n Author: {_author} \n \n");
 
             if (Comments != null)
             {
-                Console.WriteLine($"Commentaries: {Comments}");
+
+                for (int i = 0; i < Comments.Count(); i++)
+                {
+                    Console.WriteLine($"{Comments[i].DisplayComment()}");
+                }
             }
             
         }
@@ -106,6 +110,11 @@ class Program
         {
             _user = "Unknown";
             _text = "";
+        }
+
+        public string DisplayComment()
+        {
+            return $"{_user}: {_text}";
         }
     
     }
