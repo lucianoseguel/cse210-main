@@ -392,7 +392,7 @@ class Program
         {
             foreach (string item in _mylist)
             {
-                Console.WriteLine(item + "\n");
+                Console.WriteLine(item);
             }
         }
 
