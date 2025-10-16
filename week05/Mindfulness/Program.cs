@@ -8,7 +8,7 @@ class Program
 
     {
         Console.Clear();
-        Console.WriteLine("Hello Welcome to our FITCENTER Seguel's");
+        Console.WriteLine("Hello Welcome to our BRAINCENTER Seguel's");
         Console.WriteLine("Witch Activity are you doing?");
         Console.WriteLine("1. Bereathing Activity \n2. Reflection Activity \n3. Listing Activity  ");
         Console.Write("Please insert a number: ");
