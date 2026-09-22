@@ -51,29 +51,27 @@ class Program
                 return;
             }
 
-            Console.Clear();
-            Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
-            newverse = Hidde_verse(verse_1.Getonlyverse(), Globalvariables.attempt);
-            Console.WriteLine(verse_1.Getbook() + ": " + newverse);
 
-            Console.Write("");
-            choice = Console.ReadLine();
-            if (choice == "quit")
+            while (Globalvariables.attempt < 4)
             {
-                return;
+                Console.Clear();
+                Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
+
+                newverse = Hidde_verse(verse_1.Getonlyverse(), Globalvariables.attempt);
+                Console.WriteLine(verse_1.Getbook() + ": " + newverse);
+
+                Console.Write("");
+                choice = Console.ReadLine();
+                if (choice == "quit")
+                {
+                    return;
+                }
             }
-            
-            Console.Clear();
-            Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
-            newverse = Hidde_verse(verse_1.Getonlyverse(), Globalvariables.attempt);
-            Console.WriteLine(verse_1.Getbook() + ": " + newverse);
-            
-            Console.Write("");
-            choice = Console.ReadLine();
-            if (choice == "quit")
-            {
-                return;
-            }
+        
+
+       
+
+           
         
 
         }
@@ -100,6 +98,9 @@ class Program
                 return;
             }
 
+            while (Globalvariables.attempt < 4)
+            {
+
             Console.Clear();
             Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
 
@@ -113,18 +114,8 @@ class Program
                 return;
             }
             
-            Console.Clear();
-            Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
-
-            newverse = Hidde_verse(verse_2.Getonlyverse(), Globalvariables.attempt);
-            Console.WriteLine(verse_2.Getbook() + ": " + newverse);
-            
-            Console.Write("");
-            choice = Console.ReadLine();
-            if (choice == "quit")
-            {
-                return;
             }
+        
         
 
 
@@ -141,6 +132,8 @@ class Program
             {
                 return;
             }
+
+            // Clear the console and display the scripture memorizer prompt
             Console.Clear();
             Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
 
@@ -153,6 +146,10 @@ class Program
                 return;
             }
 
+
+        while (Globalvariables.attempt < 4)
+            {
+            // Clear the console and display the scripture memorizer prompt 2nd time
             Console.Clear();
             Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
 
@@ -165,24 +162,14 @@ class Program
             {
                 return;
             }
-            
-            Console.Clear();
-            Console.WriteLine(" This is the scripture memorizer. (Write quit to quit)");
 
-            newverse = Hidde_verse(verse_3.Getonlyverse(), Globalvariables.attempt);
-            Console.WriteLine(verse_3.Getbook() + ": " + newverse);
-            
-            Console.Write("");
-            choice = Console.ReadLine();
-            if (choice == "quit")
-            {
-                return;
             }
+
+
+
+           
         
         }
-
-
-
 
     }
 
@@ -241,7 +228,7 @@ class Program
         }
 
 
-        else 
+        else if (trys == 2) 
         {
             for (int i = 0; i < words.Length ; i++)
             {
@@ -252,6 +239,26 @@ class Program
                 string hiddenword = new string('_', hidetoword.Length);
 
                 words[r_words] = hiddenword;
+
+
+            }
+            string newtext = string.Join(" ", words);
+            Globalvariables.attempt++;
+            return newtext;
+        }
+
+      else
+        {
+            
+            for (int i = 0; i < words.Length ; i++)
+            {
+                
+                
+
+                string hidetoword = words[i];
+                string hiddenword = new string('_', hidetoword.Length);
+
+                words[i] = hiddenword;
 
 
             }
